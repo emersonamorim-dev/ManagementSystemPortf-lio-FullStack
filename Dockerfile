@@ -1,25 +1,17 @@
-# Use a imagem oficial do Java 17
-FROM openjdk:17-jdk-slim
+FROM ubuntu:latest AS build
 
-# Argumentos para o JAR
-ARG JAR_FILE=target/*.jar
-
-# Copie o JAR da sua aplicação para a imagem
-COPY ${JAR_FILE} app.jar
-
-# Comando para rodar a aplicação
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-
-
-# Build stage
-FROM maven:3.8.2-openjdk-17 AS build
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
 COPY . .
-RUN mvn clean package -DskipTests
 
-# Package stage
+RUN apt-get install maven -y
+RUN mvn clean install 
+
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/Backend-BackendCodGroup-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 8081
-ENTRYPOINT ["java","-jar","/app.jar"]
+EXPOSE 8080
+
+COPY --from=build /target/Backend-BackendCodGroup-0.0.1.jar
+
+ENTRYPOINT [ "java", "-jar", "app.jar" ]
 
