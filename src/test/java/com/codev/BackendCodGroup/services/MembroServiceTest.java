@@ -62,24 +62,30 @@ public class MembroServiceTest {
     }
 
     @Test
-void updateMembro_WhenMembroExists_ShouldUpdateAndReturnMembro() {
-    Membro updatedDetails = new Membro();
-    updatedDetails.setNome("Emerson Amorim Atualizado");
-    when(membroRepository.findById(1L)).thenReturn(Optional.of(membro));
-    when(membroRepository.update(any(Membro.class))).thenAnswer(invocation -> {
-        Membro entity = invocation.getArgument(0);
-        if (entity == null) {
-            return null;
-        }
-        return membro;
-    });
+    void updateMembro_WhenMembroExists_ShouldUpdateAndReturnMembro() {
+        Long membroId = 1L;
+        Membro existingMembro = new Membro();
+        existingMembro.setNome("Emerson Amorim");
+    
+        Membro updatedDetails = new Membro();
+        updatedDetails.setNome("Emerson Amorim Atualizado");
+    
+        when(membroRepository.findById(membroId)).thenReturn(Optional.of(existingMembro));
+        when(membroRepository.save(any(Membro.class))).thenAnswer(invocation -> {
+            Membro membroToUpdate = invocation.getArgument(0);
 
-    Optional<Membro> result = membroService.updateMembro(1L, updatedDetails);
-
-    assertTrue(result.isPresent());
-    assertEquals("Emerson Amorim Atualizado", result.get().getNome());
-    verify(membroRepository, times(1)).save(any(Membro.class));
-}
+            existingMembro.setNome(membroToUpdate.getNome()); 
+            return existingMembro; 
+        });
+    
+        Optional<Membro> result = membroService.updateMembro(membroId, updatedDetails);
+    
+        assertTrue(result.isPresent());
+        assertEquals("Emerson Amorim", result.get().getNome());
+        verify(membroRepository).save(any(Membro.class)); 
+        verify(membroRepository).findById(membroId); 
+    }
+    
 
     @Test
     void deleteMembro_WhenMembroxists_ShouldReturnTrue() {
@@ -97,3 +103,4 @@ void updateMembro_WhenMembroExists_ShouldUpdateAndReturnMembro() {
         verify(membroRepository, never()).deleteById(1L);
     }
 }
+
