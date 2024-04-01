@@ -1,6 +1,6 @@
 ### Aplicação FullStack Management System Portfólio 🚀 🔄 🌐
 
-Codificação de Aplicação completa a nível Full Stack Senior este sistema é uma aplicação de Gerenciamento de Projetos de Portfólio desenvolvida em Java com Spring Boot para o Backend e com suporte a operações CRUD para entidades de Projeto, integrando-se a um banco de dados PostgreSQL para persistência de dados juntamente com Hibernate. O Frontend foi implementado em JSP com Javascript e BootStrapp. A arquitetura do sistema segue princípios de Orientação a Objetos, SOLID e Domain-Driven Design (DDD) para promover um código limpo, modular e facilmente escalável..
+Codificação de Aplicação completa a nível Full Stack Senior este sistema é uma aplicação de Gerenciamento de Projetos de Portfólio desenvolvida em Java com Spring Boot para o Backend e com suporte a operações CRUD para entidades de Projeto, integrando-se a um banco de dados PostgreSQL para persistência de dados juntamente com Hibernate. O Frontend foi implementado em JSP com Javascript e BootStrapp. O Backend foi implementado com Testes Unitários usando Junit com Mockito para testar aplicação. A arquitetura do sistema segue princípios de Orientação a Objetos, SOLID e Domain-Driven Design (DDD) para promover um código limpo, modular e facilmente escalável..
 
 
 ### Defafio Técnico
