@@ -25,7 +25,7 @@
                     });
             }
         
-        // Função para atualizar a tabela com os dados recebidos
+        // atualiza a tabela com os dados recebidos
         function updateTable(pessoas) {
          const tbody = document.querySelector('table tbody');
          let tableHTML = '';
@@ -88,7 +88,7 @@
                 setTimeout(() => messageDiv.remove(), 5000); 
             }
         
-            // deletar pessoa
+            // deleta pessoa
             function deletePessoa(id) {
                 fetch(`http://localhost:8085/api/pessoa/${id}`, { method: 'DELETE' })
                     .then(response => {
