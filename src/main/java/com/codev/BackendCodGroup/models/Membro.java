@@ -6,9 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
-
-
 @Entity
 @Table(name = "membro")
 public class Membro {
@@ -20,10 +17,35 @@ public class Membro {
     private String atribuicao; 
     private Long idprojeto; 
     private Long idpessoa; 
-    
-//@ManyToMany
-//@JoinTable(name = "projeto_pessoa", joinColumns = @JoinColumn(name = "projeto_id"), inverseJoinColumns = @JoinColumn(name = "pessoa_id"))
-//    private Set<Pessoa> pessoas = new HashSet<>();
+
+    // Construtor sem argumentos exigido pela JPA
+    public Membro() {
+    }
+
+    // Construtor completo
+    public Membro(Long id, String nome, String atribuicao, Long idprojeto, Long idpessoa) {
+        this.id = id;
+        this.nome = nome;
+        this.atribuicao = atribuicao;
+        this.idprojeto = idprojeto;
+        this.idpessoa = idpessoa;
+    }
+
+    // Construtor usado nos testes com id, nome, atribuicao, e email
+    public Membro(Long id, String nome, String atribuicao, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.atribuicao = atribuicao;
+
+    }
+
+    // Construtor sem o ID para criação de novos membros onde o ID é gerado automaticamente
+    public Membro(String nome, String atribuicao, Long idprojeto, Long idpessoa) {
+        this.nome = nome;
+        this.atribuicao = atribuicao;
+        this.idprojeto = idprojeto;
+        this.idpessoa = idpessoa;
+    }
 
     // Getters e Setters
     public Long getId() {
