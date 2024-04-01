@@ -12,6 +12,8 @@ Desafio Técnico junto a CodGroup de aplicação  que se chama Management System
 - ![Java](https://img.shields.io/badge/-Java-007396?style=for-the-badge&logo=java&logoColor=white)
 - ![Spring Boot](https://img.shields.io/badge/-Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 - ![JSP](https://img.shields.io/badge/-JSP-007ACC?style=for-the-badge&logo=java&logoColor=white)
+- ![JUnit](https://img.shields.io/badge/-JUnit-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+- ![Mockito](https://img.shields.io/badge/-Mockito-239120?style=for-the-badge&logo=mockito&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 - ![AJAX](https://img.shields.io/badge/-AJAX-007ACC?style=for-the-badge&logo=ajax&logoColor=white)
 - ![jQuery](https://img.shields.io/badge/-jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
