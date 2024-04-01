@@ -26,11 +26,11 @@ public class MembroService {
         return membroRepository.save(membro);
     }
 
-    public Optional<Membro> updateMembro(Long id, Membro membroDetails) {
-        return membroRepository.findById(id).map(membro -> {
-            membro.setIdprojeto(membroDetails.getIdprojeto());
-            membro.setIdpessoa(membroDetails.getIdpessoa());
-            return membroRepository.save(membro);
+
+    public Optional<Object> updateMembro(Long id, Membro membroAtualizado) {
+        return membroRepository.findById(id).map(membroExistente -> {
+            membroExistente.setNome(membroAtualizado.getNome());
+            return Optional.of(membroRepository.save(membroExistente));
         });
     }
 
