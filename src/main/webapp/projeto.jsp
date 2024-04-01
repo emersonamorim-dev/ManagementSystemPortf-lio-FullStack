@@ -97,7 +97,7 @@
 
 <script>
 
-// preencher o formulário
+// preencha o formulário
 function preencherFormularioDeEdicao(dados) {
     $('#dataInicio').val(dados.dataInicio);
     $('#dataPrevisaoFim').val(dados.dataPrevisaoFim);
@@ -107,7 +107,7 @@ function preencherFormularioDeEdicao(dados) {
     $('#projectSelectRisco').val(dados.risco);
 }
 
-// buscar os dados do projeto para edição
+// busca os dados do projeto para edição
 function buscarDadosDoProjetoParaEdicao(projetoId) {
     $.ajax({
         url: `http://localhost:8085/api/projeto/${projetoId}`,
@@ -160,10 +160,10 @@ function editarProjeto() {
     });
 }
 
-// deletar projeto
+// deleta projeto
 function deletarProjeto(id) {
     $.ajax({
-        url: `http://localhost:8085/api/projeto/${id}`, // Substitua o número fixo pelo ID dinâmico
+        url: `http://localhost:8085/api/projeto/${id}`, 
         method: 'DELETE',
         success: function(response) {
             alert('Projeto apagado com sucesso.');
@@ -203,7 +203,6 @@ $(document).ready(function() {
     });
 });
 
-        
         // associa membro a projeto
         window.editarProjeto = function() {
             var pessoaId = $('#pessoaSelect').val();
