@@ -62,7 +62,7 @@ class MembroControllerTest {
     @Test
     void createMembro_ShouldReturnStatus201_WhenMemberCreated() {
         // Arrange
-        Membro newMember = new Membro("Emerson", "Amorim", "emerson_tecno@hotmail.com");
+        Membro newMember = new Membro(null, "Emerson", "Amorim", "emerson_tecno@hotmail.com");
         when(membroService.save(newMember)).thenReturn(newMember);
 
         // Act
