@@ -9,9 +9,10 @@
     <meta charset="UTF-8">
     <title>Lista de Pessoas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Função para buscar pessoas e atualizar a tabela
+            // busca pessoas e atualizar a tabela
             function fetchPessoas() {
                 fetch('http://localhost:8085/api/pessoa')
                     .then(response => response.json())
@@ -106,10 +107,8 @@
             }
         });
         </script>
-        
-        
+
 </head>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
 <style>
     .footer {
