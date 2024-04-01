@@ -43,7 +43,7 @@ Listagem de Projetos: GET /api/projeto - Retorna uma lista de todos os projetos 
 Busca de Projeto por ID: GET /api/projeto/{id} - Retorna os detalhes de um projeto específico baseado no ID.
 
 Criação de Projeto: POST /api/projeto - Cria um novo projeto com os dados fornecidos.
-
+http://localhost:8085/api/projeto
 ```
 
 {
@@ -60,6 +60,7 @@ Criação de Projeto: POST /api/projeto - Cria um novo projeto com os dados forn
 ```
 
 Atualização de Projeto: PUT /api/projeto/{id} - Atualiza os dados de um projeto existente.
+http://localhost:8085/api/projeto/{id}
 ```
 {
         "id": 12,
@@ -77,7 +78,18 @@ Deleção de Projeto: DELETE /api/projeto/{id} - Remove um projeto do sistema.
 
 Associação de Pessoa a Projeto: POST /api/projeto/pessoa-projetos - Associa uma pessoa a um projeto existente.
 
+http://localhost:8085/api/projeto/pessoa-projetos
 
+Necessário ter uma pessoa Cadastrada com ID 18 e um projeto com id 17 no Banco de dados para Associar Projetos a Pessoas. E assim por diante, a partir do momento que cadastra um Projeto é gerado um Id que depois pode ser associado
+ao id de uma pessoa cadastrada.
+```
+{
+  "pessoaId": 18,
+  "projetoId": 17
+}
+
+
+```
 ### Princípios e Padrões Adotados
 Orientação a Objetos: O sistema utiliza classes e objetos para modelar entidades do domínio e suas interações, promovendo encapsulamento, herança e polimorfismo.
 
