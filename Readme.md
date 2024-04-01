@@ -53,6 +53,16 @@ Administrar Projetos:
 http://localhost:8085/projeto.jsp
 ```
 
+### Necessário Docker instalado: Rode esse comando para o Sonar:
+```
+docker run -d --name sonarqube -p 9000:9000 sonarqube
+```
+
+Para executar a análise, use o seguinte comando:
+```
+mvn clean verify sonar:sonar
+
+```
 ### Funcionalidades Implementadas
 Listagem de Projetos: GET /api/projeto - Retorna uma lista de todos os projetos cadastrados.
 
