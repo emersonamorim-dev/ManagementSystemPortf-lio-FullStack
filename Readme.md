@@ -39,6 +39,20 @@ DTO: Objetos de Transferência de Dados usados para encapsular dados e simplific
 
 Servlets: Utilizados para operações de banco de dados que não são diretamente suportadas pelo Spring Data JPA, proporcionando uma camada adicional de manipulação de dados.
 
+### Acesse o Projeto depois de compilado em:
+```
+Administrar Membros:
+http://localhost:8085/membro.jsp
+```
+```
+Administrar Pessoas:
+http://localhost:8085/pessoa.jsp
+```
+```
+Administrar Projetos:
+http://localhost:8085/projeto.jsp
+```
+
 ### Funcionalidades Implementadas
 Listagem de Projetos: GET /api/projeto - Retorna uma lista de todos os projetos cadastrados.
 
