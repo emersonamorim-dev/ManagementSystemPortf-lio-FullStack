@@ -30,28 +30,33 @@ class PessoaControllerTest {
     @Test
     void getAllPessoas() {
         List<Pessoa> pessoas = new ArrayList<>();
-        pessoas.add(new Pessoa());
-        pessoas.add(new Pessoa());
+        Pessoa pessoa1 = new Pessoa();
+        pessoa1.setNome("Emerson");
+        pessoas.add(pessoa1);
+        Pessoa pessoa2 = new Pessoa();
+        pessoa2.setNome("Amorim");
+        pessoas.add(pessoa2);
         when(pessoaService.getAllPessoas()).thenReturn(pessoas);
-
         List<Pessoa> result = pessoaController.getAllPessoas();
-
+    
         assertEquals(2, result.size());
         assertEquals("Emerson", result.get(0).getNome());
         assertEquals("Amorim", result.get(1).getNome());
     }
+    
 
-    @SuppressWarnings("null")
     @Test
     void getPessoaById() {
         Pessoa pessoa = new Pessoa();
+        pessoa.setNome("Emerson"); 
         when(pessoaService.getPessoaById(1L)).thenReturn(Optional.of(pessoa));
-
+    
         ResponseEntity<Pessoa> result = pessoaController.getPessoaById(1L);
-
+    
         assertEquals(HttpStatus.OK, result.getStatusCode());
-        assertEquals("Emerson", result.getBody().getNome());
+        assertEquals("Emerson", result.getBody().getNome()); 
     }
+    
 
     @Test
     void getPessoaById_NotFound() {
@@ -66,27 +71,19 @@ class PessoaControllerTest {
     @Test
     void createPessoa() {
         Pessoa pessoa = new Pessoa();
+        pessoa.setNome("Emerson"); 
         when(pessoaService.savePessoa(pessoa)).thenReturn(pessoa);
     
         ResponseEntity<Pessoa> result = pessoaController.createPessoa(pessoa);
     
         assertEquals(HttpStatus.CREATED, result.getStatusCode());
-    
-        // Check if the body is present before accessing its value
         assertNotNull(result.getBody());
-    
-        // Print the actual and expected names
         String expectedName = "Emerson";
-        @SuppressWarnings("null")
+
         String actualName = result.getBody().getNome();
-        System.out.println("Expected Name: " + expectedName);
-        System.out.println("Actual Name: " + actualName);
-    
-        // Check if the actual name matches the expected name
         assertEquals(expectedName, actualName);
     }
-    
-    
+        
     @Test
     void updatePessoa() {
         Pessoa pessoa = new Pessoa();
@@ -127,3 +124,4 @@ class PessoaControllerTest {
         assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
     }
 }
+
