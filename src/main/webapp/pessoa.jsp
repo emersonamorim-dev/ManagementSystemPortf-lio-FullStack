@@ -207,12 +207,16 @@
                 <input type="text" class="form-control" id="cpf" name="cpf">
             </div>
             <div class="form-group">
-                <label for="funcionario">Funcionário:</label>
-                <input type="checkbox" class="form-check-input" id="funcionario" name="funcionario">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="funcionario" name="funcionario">
+                    <label class="form-check-label" for="funcionario">Funcionário:</label>
+                </div>
             </div>
             <div class="form-group">
-                <label for="gerente">Gerente:</label>
-                <input type="checkbox" class="form-check-input" id="gerente" name="gerente">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="gerente" name="gerente">
+                    <label class="form-check-label" for="gerente">Gerente:</label>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>
